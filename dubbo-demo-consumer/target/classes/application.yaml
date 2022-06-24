@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: dubbo-demo-consumer
+
+dubbo:
+  application:
+    name:  ${spring.application.name}
+    service-discovery:
+      migration: FORCE_INTERFACE
+  config:
+    ignore-duplicated-interface: true
+  registry:
+    address: zookeeper://mse-458fa974-zk.mse.aliyuncs.com:2181
+  scan:
+    base-packages: com.jaffa.practice.dubbo
+  protocols:
+    dubbo:
+      port: 20888
+  consumer:
+    check: false
